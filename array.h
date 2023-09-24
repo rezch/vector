@@ -2,13 +2,13 @@
 
 class Array {
 public:
-    Array(std::ostream& ostream);
+    explicit Array(std::ostream& ostream);
     Array(const Array& array);
-    Array(size_t size, std::ostream& ostream = std::cout, int defaultValue = 0);
+    explicit Array(size_t size, std::ostream& ostream = std::cout, int defaultValue = 0);
     ~Array();
 
-    size_t Size() const;
-    size_t Capacity() const;
+    [[nodiscard]] size_t Size() const;
+    [[nodiscard]] size_t Capacity() const;
     void Reserve(size_t newCapacity);
     void Resize(size_t newSize);
     void PushBack(int value = 0);
